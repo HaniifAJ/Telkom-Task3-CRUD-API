@@ -318,6 +318,12 @@ func main() {
 	r.PUT("/rooms/:id", updateRoom)
 	r.DELETE("/rooms/:id", deleteRoom)
 
+	r.POST("/reservations", createReservation)
+	r.GET("/reservations", getReservations)
+	r.GET("/reservations/:id", getReservationByID)
+	r.PUT("/reservations/:id", updateReservation)
+	r.DELETE("/reservations/:id", deleteReservation)
+
 	if err := r.Run(":8080"); err != nil {
 		panic(err)
 	}
